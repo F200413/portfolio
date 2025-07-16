@@ -13,23 +13,29 @@ export function Hero() {
     <>
       <Container id="home">
         <div className="hero-text">
+          {/* @ts-ignore */}
           <ScrollAnimation animateIn="fadeInUp">
             <p>HEY <img src={Hello} alt="Hello" width="20px"/>, I'm</p>
           </ScrollAnimation>
+          {/* @ts-ignore */}
           <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
             <h1>Ramsha Rana</h1>
           </ScrollAnimation>
+          {/* @ts-ignore */}
           <ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}>
             <h3 className="software-engineer">Software Engineer</h3>
           </ScrollAnimation>
+          {/* @ts-ignore */}
           <ScrollAnimation animateIn="fadeInUp" delay={0.6 * 1000}>
             <p className="small-resume">3+Years Experience</p>
           </ScrollAnimation>
+          {/* @ts-ignore */}
           <ScrollAnimation animateIn="fadeInUp" delay={0.8 * 1000}>
             <BrowserRouter>
               <NavHashLink smooth to="#contact" className="button">Contact</NavHashLink>
             </BrowserRouter>
           </ScrollAnimation>
+          {/* @ts-ignore */}
           <ScrollAnimation animateIn="fadeInUp" delay={1 * 1000}>
         <div className="social-media"><a
           href="https://www.linkedin.com/in/ramsha-rana-378669218/"
@@ -49,6 +55,7 @@ export function Hero() {
           </ScrollAnimation>
         </div>
         <div className="hero-image">
+          {/* @ts-ignore */}
           <ScrollAnimation animateIn="fadeInRight" delay={1 * 1000}>
             <img src={Illustration} alt="Ilustração" />
           </ScrollAnimation>

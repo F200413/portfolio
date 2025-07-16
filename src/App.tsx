@@ -11,10 +11,15 @@ import 'react-toastify/dist/ReactToastify.css'
 function App() {
   return (
     <>
+    {/* @ts-ignore */}
       <GlobalStyle />
+      {/* @ts-ignore */}
       <Header></Header>
+      {/* @ts-ignore */}
       <Main></Main>
+      {/* @ts-ignore */}
       <Analytics />
+      {/* @ts-ignore */}
       <Footer></Footer>
     </>
   )

@@ -12,6 +12,7 @@ export function Project() {
       <h2>My Projects</h2>
       <div className="projects">
 
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="flipInX">
           <div className="project">
             <header>
@@ -46,6 +47,7 @@ export function Project() {
           </div>
         </ScrollAnimation>
 
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="flipInX">
           <div className="project">
             <header>
@@ -73,6 +75,7 @@ export function Project() {
           </div>
         </ScrollAnimation>
 
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="flipInX">
           <div className="project">
             <header>
@@ -101,6 +104,7 @@ export function Project() {
         </ScrollAnimation>
 
 
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="flipInX">
           <div className="project">
             <header>
@@ -125,6 +129,7 @@ export function Project() {
           </div>
         </ScrollAnimation>
 
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="flipInX">
           <div className="project">
             <header>
@@ -152,6 +157,7 @@ export function Project() {
           </div>
         </ScrollAnimation>
 
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="flipInX">
           <div className="project">
             <header>

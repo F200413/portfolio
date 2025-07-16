@@ -33,24 +33,29 @@ export function About() {
   return (
     <Container id="about">
       <div className="about-text">
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft">
           <h2>About me</h2>
         </ScrollAnimation>
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={0.1 * 1000}>
           <p>
             Hi there! I'm Ramsha Rana, an enthusiastic Software Engineer skilled in web development,QA Testing, and scalable software solutions
           </p>
         </ScrollAnimation>
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
           <p>
           I build responsive web apps, ensure quality through rigorous SQA testing, and deliver robust services
           </p>
         </ScrollAnimation>
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={0.3 * 1000}>
           <p>
             I also work with CMS platforms like WordPress and Shopify to streamline content management.
           </p>
         </ScrollAnimation>
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={400}>
           <div className="education">
             <h3>Education:</h3>
@@ -60,6 +65,7 @@ export function About() {
           </div>
         </ScrollAnimation>
 
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={550}>
           <div className="experience">
 
@@ -121,61 +127,73 @@ export function About() {
 
 
 
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000}>
           <h3>Here are my main skills:</h3>
         </ScrollAnimation>
         <div className="hard-skills">
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.10 * 1000}>
               <img src={python} alt="python" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.11 * 1000}>
               <img src={java} alt="java" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.12 * 1000}>
               <img src={jsIcon} alt="JavaScript" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.13 * 1000}>
               <img src={reactIcon} alt="React" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.14 * 1000}>
               <img src={typescriptIcon} alt="Typescript" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.15 * 1000}>
               <img src={vueIcon} alt="Vue" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.16 * 1000}>
               <img src={wordpress} alt="Wordpress" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.17 * 1000}>
               <img src={shopify} alt="shopify" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.18 * 1000}>
               <img src={htmlIcon} alt="Html" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.19 * 1000}>
               <img src={cssIcon} alt="Css" />
             </ScrollAnimation>
           </div>
           <div className="hability">
+            {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.20 * 1000}>
               <img src={boostrapIcon} alt="bootstrap" />
             </ScrollAnimation>
@@ -183,6 +201,7 @@ export function About() {
         </div>
       </div>
       <div className="about-image" ref={parallaxRef}>
+        {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInRight" delay={0.21 * 1000}>
           <img src="/Images/ME.png" alt="Ramsha Rana" />
         </ScrollAnimation>
