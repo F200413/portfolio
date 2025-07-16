@@ -89,9 +89,6 @@ jspm_packages/
 .nuxt
 dist
 
-# Gatsby files
-.cache/
-public
 
 # Storybook build outputs
 .out
@@ -175,13 +172,7 @@ Temporary Items
 # Bundle analyzer
 bundle-analyzer-report.html
 
-# PWA files
-**/public/sw.js
-**/public/workbox-*.js
-**/public/worker-*.js
-**/public/sw.js.map
-**/public/workbox-*.js.map
-**/public/worker-*.js.map
+
 
 # Source maps
 *.map
