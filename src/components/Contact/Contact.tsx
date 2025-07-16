@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Container } from "./styles";
 import emailIcon from "../../assets/email-icon.svg";
 import phoneIcon from "../../assets/phone-icon.svg"

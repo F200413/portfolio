@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Container } from "./styles";
 import githubIcon from "../../assets/github.svg"
 // import DownloadApp from '../../assets/download.webp'

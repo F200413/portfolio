@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Container, ContainerSucces } from './styles'
 import { useForm, ValidationError } from '@formspree/react'
 import { toast, ToastContainer } from 'react-toastify'

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { BrowserRouter } from "react-router-dom"
 import { Container } from "./styles"
 import ScrollAnimation from "react-animate-on-scroll"

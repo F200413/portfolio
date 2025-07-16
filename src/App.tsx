@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from 'react'
 // import { useEffect } from 'react'
 import { Footer } from './components/Footer/Footer'

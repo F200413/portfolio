@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Container } from "./styles";
 import { useEffect, useRef } from "react";
 import VinayakSingh from "../../assets/VinayakSingh.webp";
