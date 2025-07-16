@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-// @ts-ignore
 const GlobalStyle = createGlobalStyle`
   :root{
     --pink: #E31F71;
