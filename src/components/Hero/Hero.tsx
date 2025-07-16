@@ -6,18 +6,10 @@ import { NavHashLink } from "react-router-hash-link"
 import linkedin from '../../assets/linkedin.svg'
 // import emailIcon from '../../assets/email-icon.svg'
 import Hello from '../../assets/Hello.gif'
-import { createGlobalStyle } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background: linear-gradient(135deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
-  }
-`;
 
 export function Hero() {
   return (
     <>
-      <GlobalStyle />
       <Container id="home">
         <div className="hero-text">
           <ScrollAnimation animateIn="fadeInUp">
