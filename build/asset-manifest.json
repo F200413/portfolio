@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.039bf95e.css",
-    "main.js": "/static/js/main.33a2d2a9.js",
+    "main.js": "/static/js/main.d668131e.js",
     "static/media/A.png": "/static/media/A.85f4087ae209cd63aa7d.png",
     "static/media/Hello.gif": "/static/media/Hello.d93720933c608f6178fb.gif",
     "static/media/Ramsha_Ashiq_CV.pdf": "/static/media/Ramsha_Ashiq_CV.3b9f9b5efebd6a0fe514.pdf",
@@ -22,10 +22,10 @@
     "static/media/js-icon.svg": "/static/media/js-icon.ffcf56dc5498f7bbbec802191c740e5f.svg",
     "static/media/vue-icon.svg": "/static/media/vue-icon.c286d2da48ffbf281f407b0c4c94271f.svg",
     "main.039bf95e.css.map": "/static/css/main.039bf95e.css.map",
-    "main.33a2d2a9.js.map": "/static/js/main.33a2d2a9.js.map"
+    "main.d668131e.js.map": "/static/js/main.d668131e.js.map"
   },
   "entrypoints": [
     "static/css/main.039bf95e.css",
-    "static/js/main.33a2d2a9.js"
+    "static/js/main.d668131e.js"
   ]
 }

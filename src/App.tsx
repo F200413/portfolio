@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css'
 function App() {
   return (
     <>
+      {/* @ts-ignore */}
       <GlobalStyle />
       <Header></Header>
       <Main></Main>
