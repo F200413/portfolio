@@ -79,6 +79,59 @@ export const Container = styled.section`
     }
   }
 
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .modal-content {
+    background: #222;
+    color: #fff;
+    border-radius: 1.2rem;
+    padding: 2.5rem 2rem 2rem 2rem;
+    width: 64vw;
+    max-width: 64vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  @media (max-width: 600px) {
+    .modal-content {
+      padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+      width: 98vw;
+      max-width: 98vw;
+      max-height: 98vh;
+    }
+    .modal-close {
+      top: 0.5rem;
+      right: 0.7rem;
+      font-size: 2rem;
+    }
+  }
+
   @media (max-width: 960px){
     .projects{
       grid-template-columns: 1fr 1fr;
