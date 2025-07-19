@@ -171,7 +171,7 @@ export const Container = styled.section`
     gap: 3rem;
     
     .hero-text {
-      margin-top: 7rem;
+      margin-top: 10rem;
     }
   }
   
