@@ -16,6 +16,8 @@ import vueIcon from "../../assets/vue-icon.svg";
 import boostrapIcon from "../../assets/bootstrap-icon.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import { SkillsMarquee } from "../ui/SkillsMarquee";
+// Remove the A import
+// import A from "../../assets/A.png";
 
 // Skills data for marquee
 const skills = [
