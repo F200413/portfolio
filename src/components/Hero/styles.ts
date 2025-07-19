@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding-top: 15%;
+  padding-top: 21%;
   display: flex;
   justify-content: space-between;
   gap: 8rem;
@@ -11,24 +11,32 @@ export const Container = styled.section`
   align-items: center;
   
   @media (max-width: 768px) {
-    padding-top: 10%;
+    padding-top: 16%;
     gap: 4rem;
     min-height: 90vh;
+    
+    .hero-text {
+      margin-top: 5rem;
+    }
   }
   
   .hero-text{
     flex: 1;
     z-index: 2;
+    margin-top: 0;
     
     & > p{
       font-size: 1.8rem;
+      margin-top: 2rem;
       
       @media (max-width: 768px) {
         font-size: 1.6rem;
+        margin-top: 1.2rem;
       }
       
       @media (max-width: 480px) {
         font-size: 1.4rem;
+        margin-top: 1rem;
       }
     }
     
@@ -46,15 +54,17 @@ export const Container = styled.section`
 
     h3{
       color:var(--green);
-      margin: 1rem 0;
+      margin: 2rem 0 1rem 0;
       font-size: 2.4rem;
       
       @media (max-width: 768px) {
         font-size: 2rem;
+        margin: 1.2rem 0 1rem 0;
       }
       
       @media (max-width: 480px) {
         font-size: 1.8rem;
+        margin: 1rem 0 1rem 0;
       }
     }
 
@@ -157,12 +167,16 @@ export const Container = styled.section`
   }
 
   @media(max-width: 600px){
-    padding-top: 15%;
+    padding-top: 21%;
     gap: 3rem;
+    
+    .hero-text {
+      margin-top: 7rem;
+    }
   }
   
   @media(max-width: 480px){
-    padding-top: 20%;
+    padding-top: 26%;
     gap: 2rem;
   }
 `
