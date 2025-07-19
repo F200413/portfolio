@@ -5,7 +5,7 @@ import githubIcon from "../../assets/github.svg"
 import externalLink from "../../assets/external-link.svg"
 import ScrollAnimation from "react-animate-on-scroll";
 import React, { useState } from "react";
-
+import { ProjectCarousel } from "../ui/ProjectCarousel";
 
 // Project data array
 const projects = [
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: "WebTestHub",
-    description: `WebTestHub is a cloud-based test automation platform built for speed, scalability, and efficiency. It enables automated testing of web applications with support for parallel test execution using containers. CI/CD pipeline integration ensures seamless deployment, while the platform simplifies test environment configuration. Designed to reduce manual testing efforts and boost QA productivity, it’s ideal for teams seeking rapid and reliable software delivery.`,
+    description: `WebTestHub is a cloud-based test automation platform built for speed, scalability, and efficiency. It enables automated testing of web applications with support for parallel test execution using containers. CI/CD pipeline integration ensures seamless deployment, while the platform simplifies test environment configuration. Designed to reduce manual testing efforts and boost QA productivity, it's ideal for teams seeking rapid and reliable software delivery.`,
     tech: ["Docker", "Python", "React.js", "MongoDB", "Redis", "Go"],
     github: "",
     external: "",
@@ -61,6 +61,19 @@ function truncate(text: string, maxLength: number) {
 export function Project() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Fix: Always open modal for new project, even if modal was just closed
   const handleProjectClick = (project: typeof projects[0]) => {
@@ -76,32 +89,38 @@ export function Project() {
   return (
     <Container id="project">
       <h2>My Projects</h2>
-      <div className="projects">
-        {projects.map((project, idx) => (
-          <div className="project" key={idx} onClick={() => handleProjectClick(project)} style={{ cursor: 'pointer' }}>
-            <header>
-              <svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <title>Folder</title>
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-              </svg>
-              <div className="project-links">
-                <a>
-                  <img src={githubIcon} alt="GitHub" />
-                </a>
+      
+      {isMobile ? (
+        <ProjectCarousel projects={projects}  onProjectClick={handleProjectClick} />
+      ) : (
+        <div className="projects">
+          {projects.map((project, idx) => (
+            <div className="project "  key={idx} onClick={() => handleProjectClick(project)} style={{ cursor: 'pointer', borderRadius: '30px' }}>
+              <header>
+                <svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  <title>Folder</title>
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <div className="project-links">
+                  <a>
+                    <img src={githubIcon} alt="GitHub" />
+                  </a>
+                </div>
+              </header>
+              <div className="body">
+                <h3>{project.title}</h3>
+                <p>{truncate(project.description, 120)}</p>
               </div>
-            </header>
-            <div className="body">
-              <h3>{project.title}</h3>
-              <p>{truncate(project.description, 120)}</p>
+              <footer>
+                <ul className="tech-list">
+                  {project.tech.map((t, i) => <li key={i}>{t}</li>)}
+                </ul>
+              </footer>
             </div>
-            <footer>
-              <ul className="tech-list">
-                {project.tech.map((t, i) => <li key={i}>{t}</li>)}
-              </ul>
-            </footer>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
+      
       {modalOpen && selectedProject && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>

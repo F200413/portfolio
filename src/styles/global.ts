@@ -68,6 +68,15 @@ const GlobalStyle = createGlobalStyle`
 
   html{
     font-size: 62.5%;
+    scroll-behavior: smooth;
+    
+    @media (max-width: 768px) {
+      font-size: 60%;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 58%;
+    }
   }
 
   body{
@@ -75,6 +84,12 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     background: linear-gradient(135deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
     color: #FFFF;
+    overflow-x: hidden;
+    min-height: 100vh;
+    
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
 
   body, input, textarea, button{
@@ -114,6 +129,49 @@ const GlobalStyle = createGlobalStyle`
     // &::first-letter{
     //   color: var(--green);
     // }
+  }
+  
+  /* Mobile-specific improvements */
+  @media (max-width: 768px) {
+    /* Improve touch targets */
+    button, .button, a {
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Prevent horizontal scroll */
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Improve text readability */
+    p, h1, h2, h3, h4, h5, h6 {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+  
+  /* Smooth scrolling for all devices */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better focus indicators for accessibility */
+  button:focus, a:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+  }
+  
+  /* Prevent text selection on interactive elements */
+  button, .button {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 `
 

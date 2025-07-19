@@ -7,21 +7,31 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 1.8rem 10rem;
-  
   background-color: #21212150;
-  
   backdrop-filter: blur(6px);
-
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   z-index: 1000;
+  
+  @media (max-width: 768px) {
+    padding: 1.2rem 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem 1.5rem;
+  }
 
   nav{
     display: flex;
     align-items: center;
     gap: 1.8rem;
+    
+    @media (max-width: 768px) {
+      gap: 1.5rem;
+    }
+    
     a{
       color: #FFFF;
       padding: 0.6rem;
@@ -29,16 +39,26 @@ export const Container = styled.header`
       font-weight: 500;
       text-transform: uppercase;
       transition: filter 0.25s;
+      font-size: 1.4rem;
+      
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+      }
 
       &.button{
         padding: 0.6rem 2rem;
+        
+        @media (max-width: 768px) {
+          padding: 0.5rem 1.5rem;
+          font-size: 1.2rem;
+        }
       }
 
       &:hover{
         filter: brightness(0.6);
       }
     }
-
   }
 
   .menu-container{
@@ -53,6 +73,10 @@ export const Container = styled.header`
     position: relative;
     cursor: pointer;
     display: none;
+    
+    @media (max-width: 768px) {
+      width: 1.8rem;
+    }
 
     &:before{
       bottom: 0.5rem;
@@ -60,7 +84,6 @@ export const Container = styled.header`
     &:after{
       top: 0.5rem;
     }
-
 
     &.active:before{
       bottom: 0;
@@ -75,7 +98,6 @@ export const Container = styled.header`
     &.active{
       background-color: rgba(0, 0, 0, 0);
     }
-
   }
 
   .menu:before, .menu:after {
@@ -88,7 +110,6 @@ export const Container = styled.header`
     cursor: pointer;
     transition: .6s;
   }
-
 
   input[type=checkbox] {
     height: 0;
@@ -112,12 +133,18 @@ export const Container = styled.header`
     position: relative;
     margin-left: auto;
     right: 10px;
+    
+    @media (max-width: 768px) {
+      width: 50px;
+      height: 28px;
+      right: 5px;
+    }
   }
 
   @media only screen and (max-width: 800px) {
     label {
-    position: relative;
-   }
+      position: relative;
+    }
   }
 
   label:after {
@@ -131,7 +158,14 @@ export const Container = styled.header`
     position: absolute;
     top: 5px;
     left: 4px;
-   transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+    transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+    
+    @media (max-width: 768px) {
+      width: 18px;
+      height: 18px;
+      top: 5px;
+      left: 4px;
+    }
   }
 
   input:checked + label {
@@ -148,19 +182,20 @@ export const Container = styled.header`
   }
 
   .logo {
-    height: 120px;
-    width: auto;
-    max-width: 180px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     object-fit: cover;
-    margin-top: 1rem;
-    transition: height 0.3s, max-width 0.3s;
-  }
-
-  @media (max-width: 960px) {
-    .logo {
-      height: 80px;
-      max-width: 120px;
+    transition: all 0.3s ease;
+    
+    @media (max-width: 768px) {
+      height: 60px;
+      width: 60px;
+    }
+    
+    @media (max-width: 480px) {
+      height: 50px;
+      width: 50px;
     }
   }
 
@@ -188,9 +223,21 @@ export const Container = styled.header`
       left: 0;
       transition: opacity 0.25s;
       background-color: var(--green);
+      gap: 2rem;
+
+      a{
+        font-size: 1.8rem;
+        padding: 1rem;
+        
+        @media (max-width: 480px) {
+          font-size: 1.6rem;
+        }
+      }
 
       a.button{
         background-color: var(--pink);
+        padding: 1rem 2rem;
+        border-radius: 2rem;
       }
 
       &.active{
@@ -200,4 +247,11 @@ export const Container = styled.header`
     }
   }
   
+  @media (max-width: 768px) {
+    padding: 1.2rem 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem 1.5rem;
+  }
 `

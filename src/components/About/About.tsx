@@ -15,6 +15,22 @@ import typescriptIcon from "../../assets/typescript-icon.svg";
 import vueIcon from "../../assets/vue-icon.svg";
 import boostrapIcon from "../../assets/bootstrap-icon.svg";
 import ScrollAnimation from "react-animate-on-scroll";
+import { SkillsMarquee } from "../ui/SkillsMarquee";
+
+// Skills data for marquee
+const skills = [
+  { name: "Python", icon: python },
+  { name: "Java", icon: java },
+  { name: "JavaScript", icon: jsIcon },
+  { name: "React", icon: reactIcon },
+  { name: "TypeScript", icon: typescriptIcon },
+  { name: "Vue.js", icon: vueIcon },
+  { name: "WordPress", icon: wordpress },
+  { name: "Shopify", icon: shopify },
+  { name: "HTML5", icon: htmlIcon },
+  { name: "CSS3", icon: cssIcon },
+  { name: "Bootstrap", icon: boostrapIcon },
+];
 
 export function About() {
   const parallaxRef = useRef(null);
@@ -22,12 +38,27 @@ export function About() {
   useEffect(() => {
     const handleScroll = () => {
       if (parallaxRef.current) {
-        const scrolled = window.scrollY;
-        (parallaxRef.current as HTMLDivElement).style.transform = `translateY(${scrolled * 0.3}px)`;
+        // Only apply parallax effect on desktop (width > 768px)
+        if (window.innerWidth > 768) {
+          const scrolled = window.scrollY;
+          (parallaxRef.current as HTMLDivElement).style.transform = `translateY(${scrolled * 0.3}px)`;
+        } else {
+          // Reset transform on mobile
+          (parallaxRef.current as HTMLDivElement).style.transform = 'translateY(0)';
+        }
       }
     };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // Handle resize events
+    
+    // Initial call to set correct state
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   return (
@@ -40,13 +71,13 @@ export function About() {
         {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={0.1 * 1000}>
           <p>
-            Hi there! I'm Ramsha Rana, an enthusiastic Software Engineer skilled in web development,QA Testing, and scalable software solutions
+            Hi there! I'm Ramsha Rana, an enthusiastic Software Engineer skilled in web development, QA Testing, and scalable software solutions.
           </p>
         </ScrollAnimation>
         {/* @ts-ignore */}
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+        <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000}>
           <p>
-          I build responsive web apps, ensure quality through rigorous SQA testing, and deliver robust services
+            I build responsive web apps, ensure quality through rigorous SQA testing, and deliver robust services.
           </p>
         </ScrollAnimation>
         {/* @ts-ignore */}
@@ -59,79 +90,51 @@ export function About() {
         <ScrollAnimation animateIn="fadeInLeft" delay={400}>
           <div className="education">
             <h3>Education:</h3>
-            <h4> Software Engineer</h4>
+            <h4>Software Engineer</h4>
             <p>FAST National University of Computer and Emerging Sciences</p>
-            
           </div>
         </ScrollAnimation>
 
         {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={550}>
           <div className="experience">
-
-             <h3>Experience:</h3>
-             <h4>Automation SQA Engineer </h4>
-             
-            <p>NetixSol|  May 2024 - Present</p>
-            <br />
-          
- 
-             <h4>Software Development Manager </h4>
-            <p>Strategic Soft LLC|  February 2024 - January 2025</p>
+            <h3>Experience:</h3>
+            <h4>Automation SQA Engineer</h4>
+            <p>NetixSol | May 2024 - Present</p>
             <br />
             
-
-            <h4>Frontend Developer </h4>
-            <p>DataLime (Pvt.) Ltd.|  July 2023 - August 2023</p>
+            <h4>Software Development Manager</h4>
+            <p>Strategic Soft LLC | February 2024 - January 2025</p>
             <br />
             
-
-            <h4>Technical Freelance </h4>
-            <p>upwork|  April 2022 - August 2023</p>
+            <h4>Frontend Developer</h4>
+            <p>DataLime (Pvt.) Ltd. | July 2023 - August 2023</p>
             <br />
             
-
-            <h4>Web Designer </h4>
-            <p>MAKSTORE LLC|  February 2022 - February 2023
-            </p>
+            <h4>Technical Freelance</h4>
+            <p>Upwork | April 2022 - August 2023</p>
             <br />
             
-
-
-            <h4>Educational Freelancer </h4>
-            <p>TeacherOn.com |  January 2021 - March 2023
-            </p>
-          <br />
-
-            <h4>SQA Teaching Assistant  </h4>
-            <p>FAST  National University of Computer and Emerging Sciences | January 2021 - June 2021
-            </p>
-           <br />
-
-
+            <h4>Web Designer</h4>
+            <p>MAKSTORE LLC | February 2022 - February 2023</p>
+            <br />
             
+            <h4>Educational Freelancer</h4>
+            <p>TeacherOn.com | January 2021 - March 2023</p>
+            <br />
 
-
-
-
+            <h4>SQA Teaching Assistant</h4>
+            <p>FAST National University of Computer and Emerging Sciences | January 2021 - June 2021</p>
           </div>
-
-
-
-
         </ScrollAnimation>
-
-
-
-
-
-
 
         {/* @ts-ignore */}
         <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000}>
           <h3>Here are my main skills:</h3>
         </ScrollAnimation>
-        <div className="hard-skills">
+        
+        {/* Desktop Skills Grid */}
+        <div className="hard-skills desktop-skills">
           <div className="hability">
             {/* @ts-ignore */}
             <ScrollAnimation animateIn="fadeInUp" delay={0.10 * 1000}>
@@ -198,6 +201,11 @@ export function About() {
               <img src={boostrapIcon} alt="bootstrap" />
             </ScrollAnimation>
           </div>
+        </div>
+        
+        {/* Mobile Skills Marquee */}
+        <div className="mobile-skills">
+          <SkillsMarquee skills={skills} />
         </div>
       </div>
       <div className="about-image" ref={parallaxRef}>
